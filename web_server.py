@@ -32,7 +32,18 @@ def parse_http(data):
     }
 
 
+"""
+The server performs the following
+steps:
 
+1. Create a socket
+2. Bind the socket to that address, and mark the socket as a listening socket.
+3. Execute an infinite loop to handle incoming client requests. Each loop itera- tion performs the following steps:
+    - Accept a connection, obtaining a new socket, cfd, for the connection.
+    - Receive data from socket
+    - Client to process data
+    - Close the connection.
+"""
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind(('127.0.0.1', 8000))
     s.listen(1)
